@@ -8,6 +8,8 @@
 ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
+ENV NVIDIA_DRIVER_CAPABILITIES all
+
 ADD https://api.github.com/repos/dusty-nv/jetson-inference/git/refs/heads/master /tmp/jetson_inference_version.json
 
 COPY build.sh /tmp/build_jetson_inference.sh
